@@ -4,7 +4,7 @@ import { data } from "../utils/data";
 import { LabelTag } from "./ui/Tag";
 
 export const RecipeCard = () => {
-  const recipeNr = 5;
+  const recipeNr = 7;
   const imageUrl = data.hits[recipeNr].recipe.image;
   const recipeName = data.hits[recipeNr].recipe.label;
   const dietLabels = data.hits[recipeNr].recipe.dietLabels;
@@ -23,14 +23,15 @@ export const RecipeCard = () => {
       cursor="pointer"
       _hover={{ transform: "scale(1.05)" }}
     >
-      <Box w="sm" h="60%" borderWidth={10}>
-        {/* <Image
+      <Flex w="sm" h="350px">
+        <Image
           src={imageUrl}
           alt={recipeName}
-          objectFit="contain"
+          objectFit="cover"
           borderTopRadius={10}
-        /> */}
-      </Box>
+          overflow="hidden"
+        />
+      </Flex>
 
       <CardBody height="50%">
         <Heading size="md" align="center">
@@ -54,7 +55,7 @@ export const RecipeCard = () => {
           </Flex>
 
           <Text align="center">
-            <b>Caution for </b>
+            <b>Caution</b>
           </Text>
           <Flex justify="center" gap={4} paddingBottom={4}>
             {cautions.map((item) => (
