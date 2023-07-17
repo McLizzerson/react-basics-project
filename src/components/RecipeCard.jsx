@@ -10,6 +10,22 @@ export const RecipeCard = ({ recipe }) => {
   const mealType = recipe.recipe.mealType;
   const cautions = recipe.recipe.cautions;
 
+  // CHECK FOR VEGAN AND OR VEGETARIAN
+  let vegetarian = false;
+  let vegan = false;
+  if (recipe.recipe.healthLabels.includes("Vegetarian")) {
+    vegetarian = true;
+  }
+  if (recipe.recipe.healthLabels.includes("Vegan")) {
+    vegan = true;
+  }
+
+  // CHECK IF THERE ARE CAUTIONS
+  let caution = false;
+  if (cautions.length > 0) {
+    caution = true;
+  }
+
   return (
     <Card
       bg="#F9F3DF"
@@ -48,12 +64,15 @@ export const RecipeCard = ({ recipe }) => {
           </Flex>
 
           <Flex justify="center" gap={4} paddingBottom={4}>
-            <LabelTag text="Vegetarian" typeOfTag="veganVeg" />
+            {vegetarian && <LabelTag text="Vegetarian" typeOfTag="veganVeg" />}
+            {vegan && <LabelTag text="Vegan" typeOfTag="veganVeg" />}
           </Flex>
 
-          <Text align="center">
-            <b>Caution</b>
-          </Text>
+          {caution && (
+            <Text align="center">
+              <b>Caution</b>
+            </Text>
+          )}
           <Flex justify="center" gap={4} paddingBottom={4}>
             {cautions.map((item) => (
               <LabelTag key={item} text={item} typeOfTag="cautions" />
