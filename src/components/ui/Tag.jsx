@@ -8,22 +8,22 @@ export const LabelTag = ({ text, typeOfTag }) => {
   switch (typeOfTag) {
     case "mealType":
     case "dishType":
-      tagColor = "#FFD6A5";
+      tagColor = "#FEBE8C";
       break;
     case "cautions":
       tagColor = "#FF9B9B";
       break;
     case "veganVeg":
-      tagColor = "#CBFFA9";
+      tagColor = "#AACB73";
       break;
-    case "healthLabels":
-      tagColor = "E1AEFF";
+    case "dietLabel":
+      tagColor = "#E1AEFF";
   }
 
   console.log(tagColor);
 
   return (
-    <Tag size="sm" variant="solid" color="white" bg={tagColor}>
+    <Tag size="md" variant="solid" color="white" bg={tagColor}>
       {text}
     </Tag>
   );
