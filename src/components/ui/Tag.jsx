@@ -3,8 +3,6 @@ import { Tag } from "@chakra-ui/react";
 export const LabelTag = ({ text, typeOfTag }) => {
   let tagColor;
 
-  console.log(text);
-
   switch (typeOfTag) {
     case "mealType":
     case "dishType":
@@ -13,17 +11,15 @@ export const LabelTag = ({ text, typeOfTag }) => {
     case "cautions":
       tagColor = "#FF9B9B";
       break;
-    case "veganVeg":
+    case "healthLabel":
       tagColor = "#AACB73";
       break;
     case "dietLabel":
       tagColor = "#E1AEFF";
   }
 
-  console.log(tagColor);
-
   return (
-    <Tag size="md" variant="solid" color="white" bg={tagColor}>
+    <Tag size="md" variant="solid" color="white" bg={tagColor} align="center">
       {text}
     </Tag>
   );
