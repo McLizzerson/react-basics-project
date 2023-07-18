@@ -1,6 +1,6 @@
-import { Box, Heading, Stack } from "@chakra-ui/react";
-import { data } from "../utils/data";
-import { RecipeCard } from "../components/RecipeCard";
+import { Box, Heading } from "@chakra-ui/react";
+import { RecipeSearch } from "../components/RecipeSearch";
+import { RecipeList } from "../components/RecipeList";
 
 export const RecipeListPage = ({ clickFn }) => {
   return (
@@ -8,11 +8,10 @@ export const RecipeListPage = ({ clickFn }) => {
       <Heading align="Center" padding={4}>
         Search for Recipes
       </Heading>
-      <Stack gap={8}>
-        {data.hits.map((hit) => (
-          <RecipeCard key={hit.recipe.label} recipe={hit} clickFn={clickFn} />
-        ))}
-      </Stack>
+
+      <RecipeSearch />
+
+      <RecipeList clickFn={clickFn} />
     </Box>
   );
 };
