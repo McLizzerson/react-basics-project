@@ -51,9 +51,18 @@ export const RecipePage = ({ recipe, clickFn }) => {
           </Flex>
 
           <Flex direction="column" justify="flex-start" gap={0}>
-            <Text>Cooking time: {cookingTime}</Text>
-            <Text>Serves: {yields}</Text>
-            <Text>Ingredients:</Text>
+            <Text>
+              <b>Total cooking time: </b>
+              {cookingTime}
+            </Text>
+            <Text>
+              <b>Servings: </b>
+              {yields}
+            </Text>
+            <br />
+            <Text>
+              <b>Ingredients:</b>
+            </Text>
 
             {ingredientLines.map((line) => (
               <Text key={line}>
@@ -64,8 +73,10 @@ export const RecipePage = ({ recipe, clickFn }) => {
           </Flex>
 
           <Flex direction="column" justify="flex-start" gap={0}>
-            <Text>Total nutreints table here</Text>
-            <NutrientTable recipe={totalNutrients} />
+            <Text>
+              <b>Nutrients: </b>
+            </Text>
+            <NutrientTable list={totalNutrients} />
           </Flex>
 
           <SimpleGrid columns={3} justify="center" gap={4} paddingBottom={4}>
