@@ -1,19 +1,16 @@
-import { Box, Center, Heading, Stack } from "@chakra-ui/react";
+import { Box, Heading, Stack } from "@chakra-ui/react";
 import { data } from "../utils/data";
 import { RecipeCard } from "../components/RecipeCard";
 
-export const RecipeListPage = () => {
-  // You can play around with the console log, but ultimately remove it once you are done
-  console.log(data.hits[0]);
-
+export const RecipeListPage = ({ clickFn }) => {
   return (
-    <Box height="100vh" flexDir="column">
+    <Box flexDir="column" bg="purple.50">
       <Heading align="Center" padding={4}>
-        Recipe List Page
+        Search for Recipes
       </Heading>
       <Stack gap={8}>
         {data.hits.map((hit) => (
-          <RecipeCard key={hit.recipe.label} recipe={hit} />
+          <RecipeCard key={hit.recipe.label} recipe={hit} clickFn={clickFn} />
         ))}
       </Stack>
     </Box>
