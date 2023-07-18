@@ -2,7 +2,7 @@ import { Flex, Heading, Image, Text, Stack } from "@chakra-ui/react";
 import { Card, CardBody } from "@chakra-ui/react";
 import { LabelTag } from "./ui/Tag";
 
-export const RecipeCard = ({ recipe }) => {
+export const RecipeCard = ({ recipe, clickFn }) => {
   const imageUrl = recipe.recipe.image;
   const recipeName = recipe.recipe.label;
   const dietLabels = recipe.recipe.dietLabels;
@@ -32,7 +32,7 @@ export const RecipeCard = ({ recipe }) => {
       borderRadius={10}
       maxWidth="100vw"
       h="35rem"
-      // onClick={() => clickFn(item)}
+      onClick={() => clickFn(recipe)}
       cursor="pointer"
       _hover={{ transform: "scale(1.05)" }}
     >
@@ -64,8 +64,10 @@ export const RecipeCard = ({ recipe }) => {
           </Flex>
 
           <Flex justify="center" gap={4} paddingBottom={4}>
-            {vegetarian && <LabelTag text="Vegetarian" typeOfTag="veganVeg" />}
-            {vegan && <LabelTag text="Vegan" typeOfTag="veganVeg" />}
+            {vegetarian && (
+              <LabelTag text="Vegetarian" typeOfTag="healthLabel" />
+            )}
+            {vegan && <LabelTag text="Vegan" typeOfTag="healthLabel" />}
           </Flex>
 
           {caution && (
