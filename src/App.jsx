@@ -5,7 +5,6 @@ import { useState } from "react";
 
 export const App = () => {
   const [selectedRecipe, setSelectedRecipe] = useState();
-  console.log(`recipe: ${selectedRecipe}`);
 
   return (
     <Box backgroundColor="purple.50" w="100vw">
