@@ -1,12 +1,17 @@
-import { data } from "../utils/data";
 import { Stack } from "@chakra-ui/react";
 import { RecipeCard } from "./RecipeCard";
 
-export const RecipeList = ({ clickFn }) => {
+export const RecipeList = ({ recipeList, clickFn }) => {
+  console.log(recipeList);
+
   return (
     <Stack gap={8}>
-      {data.hits.map((hit) => (
-        <RecipeCard key={hit.recipe.label} recipe={hit} clickFn={clickFn} />
+      {recipeList.map((recipe) => (
+        <RecipeCard
+          key={recipe.recipe.label}
+          recipe={recipe}
+          clickFn={clickFn}
+        />
       ))}
     </Stack>
   );
