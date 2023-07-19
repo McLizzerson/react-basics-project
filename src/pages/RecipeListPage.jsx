@@ -1,6 +1,5 @@
 import { Box, Heading } from "@chakra-ui/react";
 import { RecipeSearch } from "../components/RecipeSearch";
-import { RecipeList } from "../components/RecipeList";
 
 export const RecipeListPage = ({ clickFn }) => {
   return (
@@ -9,9 +8,7 @@ export const RecipeListPage = ({ clickFn }) => {
         Search for Recipes
       </Heading>
 
-      <RecipeSearch />
-
-      <RecipeList clickFn={clickFn} />
+      <RecipeSearch clickFn={clickFn} />
     </Box>
   );
 };
