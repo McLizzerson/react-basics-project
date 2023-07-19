@@ -10,22 +10,14 @@ export const RecipeSearch = ({ clickFn }) => {
   const handleChange = (event) => setSearchField(event.target.value);
 
   const matchedRecipes = data.hits.filter((recipe) => {
-    // console.log("this is a recipe");
-    // console.log(recipe);
-    console.log(recipe.recipe.label);
+    const healthLabelsJson = JSON.stringify(recipe.recipe.healthLabels);
 
-    if (recipe.recipe.label.toLowerCase().includes(searchField.toLowerCase())) {
+    if (
+      recipe.recipe.label.toLowerCase().includes(searchField.toLowerCase()) ||
+      healthLabelsJson.toLowerCase().includes(searchField.toLowerCase())
+    ) {
       return recipe;
     }
-  });
-
-  // console.log(data);
-  console.log(`data is a type of: ${typeof data}`);
-  console.log(`matched recipes is length: ${matchedRecipes.length}`);
-  console.log(matchedRecipes);
-
-  matchedRecipes.map((recipe) => {
-    console.log(recipe.recipe.label);
   });
 
   return (
