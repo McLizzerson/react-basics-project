@@ -17,7 +17,7 @@ export const NutrientTable = ({ list }) => {
   const sodiumUnit = list.NA.unit;
 
   return (
-    <Grid templateColumns="repeat(2, 1fr)">
+    <Grid templateColumns="repeat(2, 1fr)" align="left" columnGap={4}>
       <GridItem>Total Energy:</GridItem>
       <GridItem>
         {energy} {energyUnit}
