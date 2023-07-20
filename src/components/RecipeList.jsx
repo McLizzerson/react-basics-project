@@ -1,9 +1,9 @@
-import { Stack } from "@chakra-ui/react";
+import { Flex, Stack } from "@chakra-ui/react";
 import { RecipeCard } from "./RecipeCard";
 
 export const RecipeList = ({ recipeList, clickFn }) => {
   return (
-    <Stack gap={8}>
+    <Flex wrap="wrap" justify="center" gap={8}>
       {recipeList.map((recipe) => (
         <RecipeCard
           key={recipe.recipe.label}
@@ -11,6 +11,6 @@ export const RecipeList = ({ recipeList, clickFn }) => {
           clickFn={clickFn}
         />
       ))}
-    </Stack>
+    </Flex>
   );
 };
