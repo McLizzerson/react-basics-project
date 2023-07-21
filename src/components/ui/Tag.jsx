@@ -16,10 +16,21 @@ export const LabelTag = ({ text, typeOfTag }) => {
       break;
     case "dietLabel":
       tagColor = "#E1AEFF";
+      break;
+    case "none":
+      tagColor = "#ABBEB7";
+      break;
   }
 
   return (
-    <Tag size="md" variant="solid" color="white" bg={tagColor} align="center">
+    <Tag
+      size="md"
+      variant="solid"
+      color="white"
+      bg={tagColor}
+      align="center"
+      textAlign="center"
+    >
       {text}
     </Tag>
   );
