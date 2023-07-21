@@ -1,35 +1,49 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 import { RecipeSearch } from "../components/RecipeSearch";
 import { LabelTag } from "../components/ui/Tag";
 
 export const RecipeListPage = ({ clickFn }) => {
   return (
-    <Box flexDir="column" bg="purple.50" borderRadius={10} padding={8}>
-      <Heading align="Center" padding={4}>
-        Winc Recipe App 🥗
+    <Flex direction="column" bg="white" borderRadius={50} padding={8}>
+      <Heading
+        align="Center"
+        padding={4}
+        color="#475223"
+        size={{ base: "lg", sm: "xl", md: "2xl", lg: "3xl" }}
+      >
+        WINC RECIPE APP 🥗
       </Heading>
+
+      {/* Container with info about the app */}
       <Flex
-        bg="white"
+        bg="#F9FAF2"
         padding={4}
         marginBottom={4}
         gap={4}
         direction="column"
         wrap="wrap"
+        w="100%"
       >
         <Text>
           Search for recipe names or healthlabels <br />
-          Select a filter to filter your results
-          <br />
+          Select a filter to filter your results <br />
           Or browse through the entire list!
         </Text>
-        <Flex wrap="warp" direction="row" justify="center" gap={4}>
+        <Flex
+          wrap="warp"
+          direction={{ base: "column", sm: "row" }}
+          justify="center"
+          align="center"
+          gap={4}
+        >
           <LabelTag text="Meal & Dish type" typeOfTag={"mealType"} />
           <LabelTag text="Diet label" typeOfTag={"dietLabel"} />
           <LabelTag text="Health label" typeOfTag={"healthLabel"} />
         </Flex>
       </Flex>
 
+      {/* Here we call on the Recipesearch component that will load the checkbox, searchfield and show the list of recipes */}
       <RecipeSearch clickFn={clickFn} />
-    </Box>
+    </Flex>
   );
 };
