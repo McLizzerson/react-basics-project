@@ -107,7 +107,12 @@ export const RecipePage = ({ recipe, clickFn }) => {
             justify="space-between"
           >
             {/* Ingredients */}
-            <Flex direction="column" align="flex-start" gap={0}>
+            <Flex
+              direction="column"
+              align="flex-start"
+              gap={0}
+              w={{ base: "100%", sm: "100%", md: "50%", lg: "60%" }}
+            >
               <Text>
                 <b>Ingredients:</b>
               </Text>
