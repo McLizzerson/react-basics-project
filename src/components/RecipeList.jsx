@@ -1,4 +1,4 @@
-import { Flex, Stack } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { RecipeCard } from "./RecipeCard";
 
 export const RecipeList = ({ recipeList, clickFn }) => {
