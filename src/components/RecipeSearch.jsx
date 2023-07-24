@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { data } from "../utils/data";
 import { TextInput } from "./ui/TextInput";
-import { Flex, Stack } from "@chakra-ui/react";
+import { Flex, Radio, RadioGroup } from "@chakra-ui/react";
 import { RecipeList } from "./RecipeList";
-import { Radio, RadioGroup } from "@chakra-ui/react";
 
 export const RecipeSearch = ({ clickFn }) => {
   // Searchfield
   const [searchField, setSearchField] = useState("");
   const handleChange = (event) => setSearchField(event.target.value);
 
+  // RadioGroup value
+  // This will prepare the recipe list before it goes into the searchfield function
   const [value, setValue] = useState("all");
 
   let dataMassaged;
@@ -46,15 +47,15 @@ export const RecipeSearch = ({ clickFn }) => {
   });
 
   return (
-    // returns a container with the checkbox, searchfield and the resulting list or recipes
+    // returns a container with the RadioGroup, searchfield and the resulting list of recipes
     <Flex direction="column" align="center" gap={4} w="100%">
       <RadioGroup onChange={setValue} value={value} colorScheme="green">
-        <Stack direction="row">
+        <Flex direction="row" gap={4} wrap="wrap">
           <Radio value="all">All</Radio>
           <Radio value="veg">Vegetarian</Radio>
           <Radio value="vegan">Vegan</Radio>
           <Radio value="pesc">Pescatarian</Radio>
-        </Stack>
+        </Flex>
       </RadioGroup>
 
       <TextInput changeFn={handleChange} />
