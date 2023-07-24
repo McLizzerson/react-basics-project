@@ -9,7 +9,7 @@ export const RecipeSearch = ({ clickFn }) => {
   const [searchField, setSearchField] = useState("");
   const handleChange = (event) => setSearchField(event.target.value);
 
-  // RadioGroup value
+  // RadioGroup
   // This will prepare the recipe list before it goes into the searchfield function
   const [value, setValue] = useState("all");
 

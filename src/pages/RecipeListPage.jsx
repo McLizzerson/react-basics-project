@@ -14,7 +14,7 @@ export const RecipeListPage = ({ clickFn }) => {
         WINC RECIPE APP 🥗
       </Heading>
 
-      {/* Container with info about the app */}
+      {/* Container with general info about the app */}
       <Flex
         bg="#F9FAF2"
         padding={4}
@@ -25,9 +25,12 @@ export const RecipeListPage = ({ clickFn }) => {
         w="100%"
       >
         <Text>
-          Search for recipe names or healthlabels <br />
-          Select a filter to filter your results <br />
+          Search for recipe names or health labels <br />
+          Select a filter to narrow your search results <br />
           Or browse through the entire list!
+        </Text>
+        <Text>
+          Each recipe has colored labels with the following categories:
         </Text>
         <Flex
           wrap="warp"
@@ -42,7 +45,7 @@ export const RecipeListPage = ({ clickFn }) => {
         </Flex>
       </Flex>
 
-      {/* Here we call on the Recipesearch component that will load the checkbox, searchfield and show the list of recipes */}
+      {/* Here we call on the Recipesearch component that will load the radiogroup buttons, searchfield and show the list of recipes */}
       <RecipeSearch clickFn={clickFn} />
     </Flex>
   );
